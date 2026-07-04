@@ -32,8 +32,8 @@ RUN apt-get update \
 && apt-get clean \
 && rm -rf /var/lib/apt/lists/*
 
-# This will use port 631
-EXPOSE 631
+# This will use port 632
+EXPOSE 632
 
 # Add user and disable sudo password checking
 RUN useradd \
