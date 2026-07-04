@@ -1,10 +1,10 @@
-# CUPS print server image
+ServerName# CUPS print server image
 
 Forked from [https://github.com/olbat/dockerfiles/blob/master/cupsd](https://github.com/olbat/dockerfiles/blob/master/cupsd)
 ## Build
 
 ```
-docker build --tag yledoare-cups .
+docker build --tag linuxconsole-cups .
 ```
 
 
@@ -14,18 +14,18 @@ Docker image including CUPS print server and printing drivers (installed from th
 ## Run the Cups server
 
 ```
-docker run --name yledoare-cups -p 632:632 yledoare-cups 
+docker run --name linuxconsole-cups -v $PWD/etc/cups:/etc/cups -p 631:631 linuxconsole-cups 
 ```
 
 ## Add printers to the Cups server
-1. Connect to the Cups server at [http://127.0.0.1:632](http://127.0.0.1:632)
+1. Connect to the Cups server at [http://127.0.0.1:631](http://127.0.0.1:631)
 2. Add printers: Administration > Printers > Add Printer
 
 __Note__: The admin user/password for the Cups server is `print`/`print`
 
 ## Configure Cups client on your machine
 1. Install the `cups-client` package
-2. Edit the `/etc/cups/client.conf`, set `ServerName` to `127.0.0.1:632`
+2. Edit the `/etc/cups/client.conf`, set `ServerName` to `127.0.0.1:631`
 3. Test the connectivity with the Cups server using `lpstat -r`
 4. Test that printers are detected using `lpstat -v`
 5. Applications on your machine should now detect the printers!
