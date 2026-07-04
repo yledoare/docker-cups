@@ -4,7 +4,7 @@ Forked from [https://github.com/olbat/dockerfiles/blob/master/cupsd](https://git
 ## Build
 
 ```
- docker build --tag yledoare-cups 
+docker build --tag yledoare-cups .
 ```
 
 
